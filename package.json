@@ -11,14 +11,11 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
     "next": "^14.0.0",
     "framer-motion": "^10.16.4",
     "react-icons": "^4.11.0",
     "react-scroll": "^1.8.10"
-=======
-    "next": "^14.0.0"
->>>>>>> 70dd1577ff7bbaec543b21823de6faed67bd78fb
+
   },
   "devDependencies": {
     "typescript": "^5",
@@ -29,10 +26,8 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-<<<<<<< HEAD
+
     "eslint-config-next": "14.0.0"
-=======
-    "eslint-config-next": "^14"
->>>>>>> 70dd1577ff7bbaec543b21823de6faed67bd78fb
+
   }
 }

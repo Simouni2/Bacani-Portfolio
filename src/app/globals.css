@@ -13,7 +13,6 @@ html {
 }
 
 body {
-<<<<<<< HEAD
   background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
   min-height: 100vh;
   color: #e0e0e0;
@@ -108,8 +107,4 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 212, 255, 0.8);
-=======
-  font-family: system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
->>>>>>> 70dd1577ff7bbaec543b21823de6faed67bd78fb
 }
