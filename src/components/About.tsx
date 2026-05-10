@@ -91,15 +91,9 @@ export default function About() {
             <motion.div variants={itemVariants} className="mt-12">
               <h3 className="text-xl font-bold text-cyan-400 mb-4">Education</h3>
               <div className="bg-slate-800 bg-opacity-30 rounded-lg p-4">
-                <p className="font-semibold text-white">
-                  Bachelor of Science in Computer Science
-                </p>
-                <p className="text-gray-400">
-                  Cagayan State University – Carig Campus
-                </p>
-                <p className="text-sm text-gray-500 mt-2">
-                  September 2022 – May 2026
-                </p>
+                <p className="font-semibold text-white">Bachelor of Science in Computer Science</p>
+                <p className="text-gray-400">Cagayan State University – Carig Campus</p>
+                <p className="text-sm text-gray-500 mt-2">September 2022 – May 2026</p>
                 <p className="text-cyan-400 mt-2">
                   Dean&apos;s Lister for 8 consecutive semesters | GWA: 92.46
                 </p>

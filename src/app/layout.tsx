@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -7,7 +6,6 @@ export const metadata: Metadata = {
   description: "Modern developer portfolio showcasing projects, skills, and experience in web and mobile development.",
   keywords: ["developer", "portfolio", "react", "next.js", "full-stack"],
 };
-
 
 export default function RootLayout({
   children,
@@ -21,5 +19,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-
 }

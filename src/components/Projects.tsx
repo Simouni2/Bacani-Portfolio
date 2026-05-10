@@ -1,74 +1,61 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiExternalLink, FiGithub } from 'react-icons/fi';
-import {
-  SiReact,
-  SiFirebase,
-  SiJavascript,
-  SiFlutter,
-  SiPython,
-} from 'react-icons/si';
-import { MdOutlineApi } from 'react-icons/md';
+import Image from 'next/image';
+import { FiExternalLink } from 'react-icons/fi';
+import { useState } from 'react';
 
 export default function Projects() {
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+
   const projects = [
     {
+      id: 1,
       title: 'MuniciFix',
       description:
-        'A mobile-based platform for municipal issue reporting and resolution with integrated K-Means Clustering for intelligent issue categorization.',
-      image: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      technologies: [
-        { name: 'Ionic Angular', icon: MdOutlineApi },
-        { name: 'JavaScript', icon: SiJavascript },
-        { name: 'REST APIs', icon: MdOutlineApi },
-        { name: 'Cloudinary', icon: SiReact },
-      ],
+        'Municipal issue reporting platform with AI-powered categorization, real-time status tracking, and image upload support for efficient problem resolution.',
+      image: '/MuniciFix.png',
+      technologies: ['Ionic Angular', 'JavaScript', 'REST APIs', 'Cloudinary'],
       highlights: [
         'K-Means Clustering for issue categorization',
-        'Tesseract OCR integration',
-        'Centralized citizen report management',
-        'Automated concern classification',
+        'Location tracker integration',
+        'Real-time status updates',
+        'Image upload support',
       ],
       liveLink: 'https://municifix1.vercel.app',
-      featured: true,
+      comingSoon: false,
     },
     {
+      id: 2,
       title: 'BAC System',
       description:
-        'A pre-verification platform for procurement documents and PPMP management, streamlining document validation and organization workflows.',
-      image: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-      technologies: [
-        { name: 'React Native', icon: SiReact },
-        { name: 'JavaScript', icon: SiJavascript },
-        { name: 'Firebase', icon: SiFirebase },
-      ],
+        'Pre-verification platform for procurement documents and PPMP management, streamlining document validation and organizational workflows.',
+      image: '/BAC.png',
+      technologies: ['React Native', 'JavaScript', 'Firebase', 'TypeScript'],
       highlights: [
         'Digital procurement validation',
         'PPMP management automation',
         'Reduced manual workload',
         'Improved document tracking',
       ],
-      liveLink: 'https://bac-system-three.vercel.app',
-      featured: true,
+      liveLink: 'https://bac-system-three.vercel.app/',
+      comingSoon: false,
     },
     {
+      id: 3,
       title: 'StudyLens',
       description:
-        'An AI-based system for monitoring academic engagement and identifying distractions in learning environments using Python and machine learning.',
-      image: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-      technologies: [
-        { name: 'Python', icon: SiPython },
-        { name: 'Machine Learning', icon: SiReact },
-        { name: 'Firebase', icon: SiFirebase },
-      ],
+        'AI-powered system for monitoring academic engagement and identifying distractions in learning environments using advanced machine learning models.',
+      image: '/Profile.jpg',
+      technologies: ['Python', 'Machine Learning', 'Firebase', 'TensorFlow'],
       highlights: [
-        'Engagement and distraction detection',
-        'Machine learning models',
+        'Engagement detection',
+        'Distraction identification',
         'Behavioral analysis',
         'Real-time monitoring',
       ],
-      featured: true,
+      liveLink: '',
+      comingSoon: true,
     },
   ];
 
@@ -83,7 +70,7 @@ export default function Projects() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
@@ -92,150 +79,167 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section
+      id="projects"
+      className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-zinc-900 to-black"
+    >
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Section Title */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="mb-16"
         >
-          {/* Section Title */}
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 gradient-text">
-            Featured Projects
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 text-white">
+            Featured{' '}
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              Projects
+            </span>
           </h2>
 
-          {/* Projects Grid */}
-          <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="group relative"
-              >
-                {/* Project Card */}
-                <motion.div
-                  className="glass rounded-lg overflow-hidden h-full flex flex-col"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {/* Project Header Image */}
-                  <div
-                    className="h-48 relative overflow-hidden"
-                    style={{ background: project.image }}
-                  >
+          <p className="text-gray-400 text-lg max-w-2xl">
+            Explore my latest work showcasing full-stack development, AI integration,
+            and modern web technologies.
+          </p>
+        </motion.div>
+
+        {/* Projects Grid */}
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {projects.map((project) => (
+            <motion.div
+              key={project.id}
+              variants={itemVariants}
+              className="group relative"
+              onMouseEnter={() => setHoveredProject(project.id)}
+              onMouseLeave={() => setHoveredProject(null)}
+            >
+              {/* Card */}
+              <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-zinc-900 via-black to-zinc-900 backdrop-blur-xl h-full flex flex-col">
+
+                {/* Image */}
+                <div className="relative h-64 md:h-72 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+
+                  {/* Coming Soon */}
+                  {project.comingSoon && (
                     <motion.div
-                      className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  </div>
+                      animate={{ y: [0, -5, 0] }}
+                      transition={{ repeat: Infinity, duration: 2 }}
+                      className="absolute top-4 right-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-2 text-sm font-bold text-white shadow-lg"
+                    >
+                      Coming Soon
+                    </motion.div>
+                  )}
+                </div>
 
-                  {/* Project Content */}
-                  <div className="p-6 flex-1 flex flex-col">
-                    {/* Title */}
-                    <h3 className="text-2xl font-bold text-cyan-400 mb-3">
-                      {project.title}
-                    </h3>
+                {/* Content */}
+                <div className="flex flex-col flex-grow p-6 md:p-8">
 
-                    {/* Description */}
-                    <p className="text-gray-300 mb-4 flex-1">
-                      {project.description}
+                  {/* Title */}
+                  <h3 className="mb-3 text-2xl md:text-3xl font-bold text-white transition-all duration-300 group-hover:text-cyan-400">
+                    {project.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="mb-6 text-sm leading-relaxed text-gray-300 md:text-base">
+                    {project.description}
+                  </p>
+
+                  {/* Highlights */}
+                  <div className="mb-6">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-cyan-400">
+                      Key Features
                     </p>
 
-                    {/* Technologies */}
-                    <div className="mb-4">
-                      <p className="text-xs text-gray-400 mb-3 uppercase tracking-wider">
-                        Technologies
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech, idx) => {
-                          const IconComponent = tech.icon;
-                          return (
-                            <motion.div
-                              key={idx}
-                              whileHover={{ scale: 1.2 }}
-                              className="p-2 glass rounded-lg"
-                            >
-                              <IconComponent size={18} className="text-cyan-400" />
-                            </motion.div>
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                    {/* Highlights */}
-                    <div className="mb-4">
-                      <p className="text-xs text-gray-400 mb-2 uppercase tracking-wider">
-                        Key Features
-                      </p>
-                      <ul className="text-sm text-gray-300 space-y-1">
-                        {project.highlights.slice(0, 2).map((highlight, idx) => (
-                          <li key={idx} className="flex gap-2">
-                            <span className="text-cyan-400">•</span>
-                            <span>{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Links */}
-                    <div className="flex gap-3 pt-4 border-t border-cyan-400 border-opacity-20">
-                      {project.liveLink && (
-                        <motion.a
-                          href={project.liveLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="flex-1 px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold flex items-center justify-center gap-2 hover:glow transition-all"
+                    <ul className="space-y-2">
+                      {project.highlights.map((highlight, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-start gap-2 text-sm text-gray-300"
                         >
-                          Live Demo <FiExternalLink size={16} />
-                        </motion.a>
-                      )}
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex-1 px-4 py-2 rounded-lg border border-cyan-400 text-cyan-400 font-semibold hover:bg-cyan-400 hover:text-slate-900 transition-colors flex items-center justify-center gap-2"
-                      >
-                        Details <FiExternalLink size={16} />
-                      </motion.button>
-                    </div>
+                          <span className="mt-1 text-cyan-400">→</span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
 
-          {/* Additional Projects Note */}
-          <motion.div
-            className="glass rounded-lg p-6 text-center"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
+                  {/* Technologies */}
+                  <div className="mb-8 flex flex-wrap gap-2">
+                    {project.technologies.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Live Demo Button */}
+                  {!project.comingSoon && (
+                    <div className="mt-auto">
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                       className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400 bg-transparent px-5 py-3 text-cyan-300 font-semibold transition-all duration-300 hover:scale-105 hover:bg-cyan-400/10 hover:text-white hover:shadow-[0_0_20px_rgba(34,211,238,0.5)]"
+                      >
+                        <FiExternalLink className="text-lg" />
+                        Live Demo
+                      </a>
+                    </div>
+                  )}
+                </div>
+
+                {/* Glow Border */}
+                <motion.div
+                  className="pointer-events-none absolute inset-0 rounded-3xl"
+                  animate={{
+                    boxShadow:
+                      hoveredProject === project.id
+                        ? '0 0 40px rgba(34,211,238,0.45)'
+                        : '0 0 15px rgba(34,211,238,0.12)',
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Bottom Link */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-2 text-lg font-semibold text-cyan-400 transition-colors hover:text-cyan-300"
           >
-            <p className="text-gray-300 mb-4">
-              Check out more projects on my GitHub
-            </p>
-            <motion.a
-              href="https://github.com/Simouni2"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-6 py-2 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-slate-900 transition-colors font-semibold"
-            >
-              <FiGithub /> Visit GitHub Profile
-            </motion.a>
-          </motion.div>
+            Explore More Projects
+            <FiExternalLink className="h-5 w-5" />
+          </a>
         </motion.div>
       </div>
     </section>
