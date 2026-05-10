@@ -48,9 +48,9 @@ export default function About() {
               variants={itemVariants}
               className="text-lg text-gray-300 mb-6 leading-relaxed"
             >
-              I'm a Computer Science graduate from Cagayan State University with a strong passion for building 
+              I&apos;m a Computer Science graduate from Cagayan State University with a strong passion for building 
               practical and user-focused applications. With internship and project experience in full-stack 
-              development, QA testing, and AI-enabled systems, I've developed a diverse skill set in modern 
+              development, QA testing, and AI-enabled systems, I&apos;ve developed a diverse skill set in modern 
               web and mobile technologies.
             </motion.p>
 
@@ -59,9 +59,9 @@ export default function About() {
               variants={itemVariants}
               className="text-lg text-gray-300 mb-6 leading-relaxed"
             >
-              During my career, I've worked on innovative projects including a municipal issue reporting 
+              During my career, I&apos;ve worked on innovative projects including a municipal issue reporting 
               platform with AI clustering, a procurement management system, and an academic engagement 
-              monitoring system. I'm committed to solving real-world problems through clean code, intuitive 
+              monitoring system. I&apos;m committed to solving real-world problems through clean code, intuitive 
               design, and continuous learning.
             </motion.p>
 
@@ -91,11 +91,17 @@ export default function About() {
             <motion.div variants={itemVariants} className="mt-12">
               <h3 className="text-xl font-bold text-cyan-400 mb-4">Education</h3>
               <div className="bg-slate-800 bg-opacity-30 rounded-lg p-4">
-                <p className="font-semibold text-white">Bachelor of Science in Computer Science</p>
-                <p className="text-gray-400">Cagayan State University – Carig Campus</p>
-                <p className="text-sm text-gray-500 mt-2">September 2022 – May 2026</p>
+                <p className="font-semibold text-white">
+                  Bachelor of Science in Computer Science
+                </p>
+                <p className="text-gray-400">
+                  Cagayan State University – Carig Campus
+                </p>
+                <p className="text-sm text-gray-500 mt-2">
+                  September 2022 – May 2026
+                </p>
                 <p className="text-cyan-400 mt-2">
-                  Dean's Lister for 8 consecutive semesters | GWA: 92.46
+                  Dean&apos;s Lister for 8 consecutive semesters | GWA: 92.46
                 </p>
               </div>
             </motion.div>

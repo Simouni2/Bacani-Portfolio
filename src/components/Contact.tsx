@@ -272,7 +272,7 @@ export default function Contact() {
                     exit={{ opacity: 0, y: 10 }}
                     className="p-3 bg-green-500 bg-opacity-20 border border-green-500 text-green-400 rounded-lg text-center"
                   >
-                    Thanks! I'll get back to you soon.
+                    Thanks! I&apos;ll get back to you soon.
                   </motion.div>
                 )}
               </form>
