@@ -99,7 +99,7 @@ export default function Hero() {
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <motion.div>
+          <motion.div className="order-2 lg:order-1">
             {/* Welcome Badge */}
             <motion.div variants={itemVariants} className="mb-8">
               <span className="inline-block px-4 py-2 glass rounded-full text-sm text-cyan-400 font-medium">
@@ -143,21 +143,24 @@ export default function Hero() {
                 Download Resume
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity pointer-events-none" />
               </button>
-              <ScrollLink
-                to="projects"
-                smooth={true}
-                duration={500}
-                className="cursor-pointer"
-              >
-                <button className="btn-neon flex items-center justify-center gap-2">
-                  View My Work
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </button>
-              </ScrollLink>
+<ScrollLink
+  to="projects"
+  smooth={true}
+  duration={500}
+  className="w-full sm:w-auto"
+>
+  <button className="btn-neon w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3">
+    View My Work
+    <span className="transition-transform group-hover:translate-x-1">→</span>
+  </button>
+</ScrollLink>
             </motion.div>
 
             {/* Social Links */}
-            <motion.div variants={itemVariants} className="flex gap-4">
+           <motion.div
+  variants={itemVariants}
+  className="flex justify-center lg:justify-start gap-4 w-full"
+>
               <a
                 href="https://github.com"
                 target="_blank"
@@ -190,7 +193,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Right - Profile Image */}
-          <motion.div variants={itemVariants} className="flex justify-center">
+          <motion.div variants={itemVariants} className="flex justify-center order-1 lg:order-2">
             <div className="relative w-80 h-80 md:w-96 md:h-96">
               {/* Animated border glow */}
               <motion.div
@@ -212,7 +215,7 @@ export default function Hero() {
                     src="/Profile.jpg"
                     alt="Stephen Bacani"
                     fill
-                    className="object-cover rounded-2xl"
+                    className="object-cover object-[center_20%] rounded-2xl"
                     priority
                   />
                   
@@ -241,15 +244,17 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Scroll Down Arrow */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="text-cyan-400 text-sm font-medium">Scroll to explore</div>
-          <FiArrowDown className="w-6 h-6 text-cyan-400 animate-bounce" />
-        </motion.div>
+<motion.div
+  className="mt-10 flex flex-col items-center justify-center gap-2 text-center lg:absolute lg:bottom-10 lg:left-1/2 lg:-translate-x-1/2"
+  animate={{ y: [0, 10, 0] }}
+  transition={{ duration: 2, repeat: Infinity }}
+>
+  <div className="text-cyan-400 text-sm font-medium">
+    Scroll to explore
+  </div>
+
+  <FiArrowDown className="w-6 h-6 text-cyan-400 animate-bounce" />
+</motion.div>
       </motion.div>
     </section>
   );
