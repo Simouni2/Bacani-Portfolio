@@ -76,27 +76,18 @@ export default function Experience() {
         </motion.div>
 
         {/* Timeline */}
-<<<<<<< HEAD
 <motion.div
   className="relative z-0"
-=======
-        <motion.div
-          className="relative"
->>>>>>> 06afdfe261ad7855a70e98b3d45262d1dfdb6394
+
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {/* Timeline line */}
-<<<<<<< HEAD
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 
 bg-gradient-to-b from-cyan-500 via-purple-500 to-cyan-500 
 transform md:-translate-x-1/2 z-0 opacity-80" />
-=======
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-500 via-purple-500 to-cyan-500 transform md:-translate-x-1/2" />
-
->>>>>>> 06afdfe261ad7855a70e98b3d45262d1dfdb6394
           {/* Experience Items */}
           <div className="space-y-12">
             {experiences.map((exp, idx) => (
@@ -106,25 +97,18 @@ transform md:-translate-x-1/2 z-0 opacity-80" />
                   <div className="flex-1 md:w-1/2 md:pr-12">
                     {/* Timeline dot */}
                     <motion.div
-<<<<<<< HEAD
   className="absolute left-4 md:left-1/2 top-8 w-4 h-4 
 bg-cyan-400 rounded-full 
 transform -translate-x-1/2 md:-translate-x-1/2 
 border-4 border-slate-900 z-20"
-=======
-                      className="absolute left-0 md:left-1/2 top-8 w-4 h-4 bg-cyan-400 rounded-full transform -translate-x-1.5 md:translate-x-0 md:-translate-x-1/2 border-4 border-slate-900"
-                      whileHover={{ scale: 1.3 }}
->>>>>>> 06afdfe261ad7855a70e98b3d45262d1dfdb6394
+
                       animate={{ boxShadow: ['0 0 0 0 rgba(0, 212, 255, 0.7)', '0 0 0 10px rgba(0, 212, 255, 0)'] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     />
 
                     {/* Card */}
-<<<<<<< HEAD
                    <div className="relative z-10 ml-8 md:ml-0 card-cyber rounded-2xl p-6 md:p-8 border border-cyan-400 border-opacity-20 hover:border-opacity-50 transition-all group bg-slate-900/60 backdrop-blur-md">
-=======
-                    <div className="ml-8 md:ml-0 card-cyber rounded-2xl p-6 md:p-8 border border-cyan-400 border-opacity-20 hover:border-opacity-50 transition-all group">
->>>>>>> 06afdfe261ad7855a70e98b3d45262d1dfdb6394
+
                       {/* Header */}
                       <div className="mb-4">
                         <h3 className="text-2xl font-bold text-cyan-400 mb-2 group-hover:gradient-text transition-all">

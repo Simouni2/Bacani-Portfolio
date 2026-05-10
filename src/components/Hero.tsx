@@ -99,9 +99,7 @@ export default function Hero() {
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-
           <motion.div className="order-2 lg:order-1">
-
             {/* Welcome Badge */}
             <motion.div variants={itemVariants} className="mb-8">
               <span className="inline-block px-4 py-2 glass rounded-full text-sm text-cyan-400 font-medium">
@@ -195,9 +193,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Right - Profile Image */}
-
           <motion.div variants={itemVariants} className="flex justify-center order-1 lg:order-2">
-
             <div className="relative w-80 h-80 md:w-96 md:h-96">
               {/* Animated border glow */}
               <motion.div
@@ -219,9 +215,7 @@ export default function Hero() {
                     src="/Profile.jpg"
                     alt="Stephen Bacani"
                     fill
-
                     className="object-cover object-[center_20%] rounded-2xl"
-
                     priority
                   />
                   
@@ -249,6 +243,7 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
+
 <motion.div
   className="mt-10 flex flex-col items-center justify-center gap-2 text-center lg:absolute lg:bottom-10 lg:left-1/2 lg:-translate-x-1/2"
   animate={{ y: [0, 10, 0] }}
@@ -260,7 +255,6 @@ export default function Hero() {
 
   <FiArrowDown className="w-6 h-6 text-cyan-400 animate-bounce" />
 </motion.div>
-
       </motion.div>
     </section>
   );
